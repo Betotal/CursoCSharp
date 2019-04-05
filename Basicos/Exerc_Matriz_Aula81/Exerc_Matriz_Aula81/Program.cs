@@ -29,12 +29,11 @@ namespace Exerc_Matriz_Aula81
             Console.WriteLine();
 
             int i, j;
-            int x;
             int[,] Matriz = new int[linha, coluna];
             Console.WriteLine("Por favor, informe os números da matriz:");
             for (i = 0; i < linha; i++)
             {
-                x = i + 1;
+                int x = i + 1;
                 Console.Write($"Entre com os dados da {x}ª Linha: ");
                 string[] values = Console.ReadLine().Split(" ");
 
