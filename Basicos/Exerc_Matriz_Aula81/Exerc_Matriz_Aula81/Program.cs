@@ -55,42 +55,29 @@ namespace Exerc_Matriz_Aula81
                     {
                         Console.WriteLine($"Posição na Matriz: {i}, {j}");
                         // esquerda
-                        x = j - 1;
-                        if (x >= 0)
+                        if (j > 0)
                         {
-                            Console.WriteLine($"Número a esquerda: {Matriz[i, x]}");
+                            Console.WriteLine($"Número a esquerda: {Matriz[i, j - 1]}");
                         }
                         // direita
-                        x = j + 1;
-                        if (x <= linha)
+                        if (j < linha)
                         {
-                            Console.WriteLine($"Número a direita: {Matriz[i, x]}");
+                            Console.WriteLine($"Número a direita: {Matriz[i, j + 1]}");
                         }
                         // acima
-                        x = i - 1;
-                        if (x >= 0)
+                        if (i > 0)
                         {
-                            Console.WriteLine($"Número acima: {Matriz[x, j]}");
+                            Console.WriteLine($"Número acima: {Matriz[i - 1, j]}");
                         }
                         //abaixo
-                        x = i + 1;
-                        if (x <= coluna)
+                        if (i < coluna)
                         {
-                            Console.WriteLine($"Número abaixo: {Matriz[x, j]}");
+                            Console.WriteLine($"Número abaixo: {Matriz[i + 1, j]}");
                         }
                         Console.WriteLine();
                     }
                 }
             }
-
-            foreach (int obj in Matriz)
-            {
-                if (obj == pesquisa)
-                {
-                    Console.WriteLine($"Posição na Matriz digitada: ");
-                }
-            }
-
         }
     }
 }
