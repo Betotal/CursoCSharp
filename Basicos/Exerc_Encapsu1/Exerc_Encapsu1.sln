@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exerc_Encapsu1", "Exerc_Encapsu1\Exerc_Encapsu1.csproj", "{CF9800CC-1F08-44C0-8FFB-29BED4B7B869}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9800CC-1F08-44C0-8FFB-29BED4B7B869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9800CC-1F08-44C0-8FFB-29BED4B7B869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9800CC-1F08-44C0-8FFB-29BED4B7B869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9800CC-1F08-44C0-8FFB-29BED4B7B869}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94A7D515-F643-47C1-B242-110F124D0BC6}
+	EndGlobalSection
+EndGlobal
