@@ -6,8 +6,8 @@ namespace Aula122_Enum_Comp_StrBD.Entities
 {
     class Produto
     {
-        public string Nome { get; set; };
-        public double Preco { get; set; };
+        public string Nome { get; set; }
+        public double Preco { get; set; }
 
         public Produto()
         {

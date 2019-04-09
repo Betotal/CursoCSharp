@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Aula122_Enum_Comp_StrBD.Entities;
+using Aula122_Enum_Comp_StrBD.Enum;
 
 namespace Aula122_Enum_Comp_StrBD
 {
@@ -13,30 +15,46 @@ namespace Aula122_Enum_Comp_StrBD
             Console.WriteLine();
             Console.WriteLine();
 
-
             do
             {
+                Order Pedido = new Order();
+
                 Console.WriteLine("Dados do Cliente:");
                 Console.Write("Nome do Cliente: ");
-                string nome = Console.ReadLine();
+                Pedido.Cli.Nome = Console.ReadLine();
 
                 Console.Write("Email do cliente: ");
-                string email = Console.ReadLine();
+                Pedido.Cli.Email = Console.ReadLine();
 
                 Console.Write("Data de Nascimento (DD/MM/AAAA): ");
-                DateTime aniversario = DateTime.Parse(Console.ReadLine());
-
-                Cliente client = new Cliente(nome, email, aniversario);
+                Pedido.Cli.Aniversario = DateTime.Parse(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.WriteLine("Entre com os dados do Pedido:");
 
-                Console.Write("Stutus do pedido(Pgto_Pendente/ Processando/ Enviado/ Entregue): ");
+                Console.Write("Status do pedido(Pgto_Pendente/ Processando/ Enviado/ Entregue): ");
                 string status = Console.ReadLine();
 
-                Console.Write("Quantos itnes o pedido terá: ");
+                OrderStatus os = new OrderStatus();
+                if (status.ToUpper() == Enum.OrderStatus.Entregue.ToString().ToUpper())
+                {
+                    os = Enum.OrderStatus.Entregue;
+                }
+                else if (status == Enum.OrderStatus.Enviado.ToString())
+                {
+                    os = Enum.OrderStatus.Enviado;
+                } else if (status == Enum.OrderStatus.Pgto_Pendente.ToString())
+                {
+                    os = Enum.OrderStatus.Pgto_Pendente;
+                } else if (status == Enum.OrderStatus.Processando.ToString()){
+                    os = Enum.OrderStatus.Processando;
+                }
+            
+                Console.Write("Quantos itens o pedido terá: ");
                 int N = int.Parse(Console.ReadLine());
-                
+
+                List<OrderItem> Itens = new List<OrderItem>();
+
                 for (int i = 0; i < N; i++)
                 {
                     Console.WriteLine($"Entre com o dados do {i + 1}# Item");
@@ -49,22 +67,18 @@ namespace Aula122_Enum_Comp_StrBD
                     Console.Write("Quantidade do produto: ");
                     int qtde = int.Parse(Console.ReadLine());
 
-                    OrderItem item = new OrderItem();
-
-                    item.addOrderItem(qtde, produto, preco);
+                    Pedido.addItem(new OrderItem(qtde, produto, preco));
                 }
 
+                Console.WriteLine(Pedido);
+                Console.WriteLine();
+                
+                Console.WriteLine("Deseja processar outro pedido? <S/N>: ");
+                resposta = char.Parse(Console.ReadLine());
+
+            } while (resposta == 's' || resposta == 'S');
 
 
-
-
-
-
-
-
-
-
-            }while (resposta = 's' || resposta = 'S')
         }
     }
 }
