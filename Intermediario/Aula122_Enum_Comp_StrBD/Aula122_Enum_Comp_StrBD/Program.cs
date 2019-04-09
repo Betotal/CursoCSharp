@@ -16,17 +16,17 @@ namespace Aula122_Enum_Comp_StrBD
             Console.WriteLine();
 
             do
-            {
+            {    
                 Order Pedido = new Order();
 
-                Console.WriteLine("Dados do Cliente:");
-                Console.Write("Nome do Cliente: ");
+                Console.WriteLine("DADOS DO CLIENTE:");
+                Console.Write("                   Nome do Cliente: ");
                 Pedido.Cli.Nome = Console.ReadLine();
 
-                Console.Write("Email do cliente: ");
+                Console.Write("                   Email do cliente: ");
                 Pedido.Cli.Email = Console.ReadLine();
 
-                Console.Write("Data de Nascimento (DD/MM/AAAA): ");
+                Console.Write("                   Data de Nascimento (DD/MM/AAAA): ");
                 Pedido.Cli.Aniversario = DateTime.Parse(Console.ReadLine());
                 Console.WriteLine();
 
@@ -40,16 +40,19 @@ namespace Aula122_Enum_Comp_StrBD
                 {
                     os = Enum.OrderStatus.Entregue;
                 }
-                else if (status == Enum.OrderStatus.Enviado.ToString())
+                else if (status.ToUpper() == Enum.OrderStatus.Enviado.ToString().ToUpper())
                 {
                     os = Enum.OrderStatus.Enviado;
-                } else if (status == Enum.OrderStatus.Pgto_Pendente.ToString())
+                } else if (status.ToUpper() == Enum.OrderStatus.Pgto_Pendente.ToString().ToUpper())
                 {
                     os = Enum.OrderStatus.Pgto_Pendente;
-                } else if (status == Enum.OrderStatus.Processando.ToString()){
+                } else if (status.ToUpper() == Enum.OrderStatus.Processando.ToString().ToUpper())
+                {
                     os = Enum.OrderStatus.Processando;
                 }
-            
+
+                Pedido.setStatus(os);
+
                 Console.Write("Quantos itens o pedido terá: ");
                 int N = int.Parse(Console.ReadLine());
 
@@ -68,6 +71,7 @@ namespace Aula122_Enum_Comp_StrBD
                     int qtde = int.Parse(Console.ReadLine());
 
                     Pedido.addItem(new OrderItem(qtde, produto, preco));
+                    Console.WriteLine();
                 }
 
                 Console.WriteLine(Pedido);

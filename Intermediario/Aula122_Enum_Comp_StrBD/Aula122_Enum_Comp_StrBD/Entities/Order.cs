@@ -26,17 +26,22 @@ namespace Aula122_Enum_Comp_StrBD.Entities
 
         public Order()
         {
+            Momento = DateTime.Now;
         }
 
         public void addItem(OrderItem item)
         {
             Itens.Add(item);
-
         }
  
         public void removeItem(OrderItem item)
         {
             Itens.Remove(item);
+        }
+
+        public void setStatus(OrderStatus status)
+        {
+            Status = status;
         }
 
         public double Total()
