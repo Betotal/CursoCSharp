@@ -36,11 +36,29 @@ namespace Aula122_Enum_Comp_StrBD
                 string status = Console.ReadLine();
 
                 OrderStatus os = new OrderStatus();
+
+                switch (status)
+                {
+                    case "Pgto_Pendente":
+                        os = Enum.OrderStatus.Pgto_Pendente;
+                        break;
+                    case "Processando":
+                        os = Enum.OrderStatus.Processando;
+                        break;
+                    case "Enviado":
+                        os = Enum.OrderStatus.Enviado;
+                        break;
+                    case "Entregue":
+                        os = Enum.OrderStatus.Entregue;
+                        break;
+                    default:
+                        break;
+                }
+         /* 
                 if (status.ToUpper() == Enum.OrderStatus.Entregue.ToString().ToUpper())
                 {
                     os = Enum.OrderStatus.Entregue;
-                }
-                else if (status.ToUpper() == Enum.OrderStatus.Enviado.ToString().ToUpper())
+                } else if (status.ToUpper() == Enum.OrderStatus.Enviado.ToString().ToUpper())
                 {
                     os = Enum.OrderStatus.Enviado;
                 } else if (status.ToUpper() == Enum.OrderStatus.Pgto_Pendente.ToString().ToUpper())
@@ -50,7 +68,7 @@ namespace Aula122_Enum_Comp_StrBD
                 {
                     os = Enum.OrderStatus.Processando;
                 }
-
+         */       
                 Pedido.setStatus(os);
 
                 Console.Write("Quantos itens o pedido terá: ");
