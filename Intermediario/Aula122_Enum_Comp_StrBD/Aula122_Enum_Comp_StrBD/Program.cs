@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Aula122_Enum_Comp_StrBD.Entities;
-using Aula122_Enum_Comp_StrBD.Enum;
+using Aula122_Enum_Comp_StrBD.Enums;
 
 namespace Aula122_Enum_Comp_StrBD
 {
@@ -33,10 +33,9 @@ namespace Aula122_Enum_Comp_StrBD
                 Console.WriteLine("Entre com os dados do Pedido:");
 
                 Console.Write("Status do pedido(Pgto_Pendente/ Processando/ Enviado/ Entregue): ");
-                string status = Console.ReadLine();
 
+             /*   string status = Console.ReadLine();
                 OrderStatus os = new OrderStatus();
-
                 switch (status)
                 {
                     case "Pgto_Pendente":
@@ -53,22 +52,10 @@ namespace Aula122_Enum_Comp_StrBD
                         break;
                     default:
                         break;
-                }
-         /* 
-                if (status.ToUpper() == Enum.OrderStatus.Entregue.ToString().ToUpper())
-                {
-                    os = Enum.OrderStatus.Entregue;
-                } else if (status.ToUpper() == Enum.OrderStatus.Enviado.ToString().ToUpper())
-                {
-                    os = Enum.OrderStatus.Enviado;
-                } else if (status.ToUpper() == Enum.OrderStatus.Pgto_Pendente.ToString().ToUpper())
-                {
-                    os = Enum.OrderStatus.Pgto_Pendente;
-                } else if (status.ToUpper() == Enum.OrderStatus.Processando.ToString().ToUpper())
-                {
-                    os = Enum.OrderStatus.Processando;
-                }
-         */       
+                }*/// Estava errado por causa da nomenclatura da pasta
+
+                OrderStatus os = Enum.Parse<OrderStatus>(Console.ReadLine()); 
+
                 Pedido.setStatus(os);
 
                 Console.Write("Quantos itens o pedido terá: ");

@@ -19,5 +19,16 @@ namespace Aula122_Enum_Comp_StrBD.Entities
         {
             return Qtde * P1.Preco;
         }
+        // programa do professor
+        public override string ToString()
+        {
+            return P1.Nome
+                 + ", $"
+                 + P1.Preco.ToString("F2")
+                 + ", Quantidade: "
+                 + Qtde.ToString()
+                 + ", Subtotal: "
+                 + SubTotal(P1).ToString("F2");
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Aula122_Enum_Comp_StrBD.Enum
+﻿namespace Aula122_Enum_Comp_StrBD.Enums
 {
     enum OrderStatus
     {

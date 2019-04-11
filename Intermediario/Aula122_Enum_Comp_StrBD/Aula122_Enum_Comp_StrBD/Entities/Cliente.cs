@@ -20,5 +20,14 @@ namespace Aula122_Enum_Comp_StrBD.Entities
             Email = email;
             Aniversario = aniversario;
         }
+        // programa do professor
+        public override string ToString()
+        {
+            return Nome 
+                 + ", ("
+                 + Aniversario.ToString("dd/MM/YY") 
+                 + ") - " 
+                 + Email;
+        }
     }
 }
