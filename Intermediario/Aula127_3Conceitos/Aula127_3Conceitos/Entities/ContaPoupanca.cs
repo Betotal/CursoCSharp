@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Aula127_3Conceitos.Entities
 {
+
+   // sealed class ContaPoupanca : ContaCorrente  // selando para que não seja herdada
     class ContaPoupanca : ContaCorrente
     {
         public double TaxaUpdate { get; set; }
@@ -23,8 +25,10 @@ namespace Aula127_3Conceitos.Entities
             Saldo += (1 + (taxa / 100));
         }
 
+
         //sobreposicao 
-        public override void RetiradaSaldo(double quantia)
+       // public sealed override void RetiradaSaldo(double quantia) // selado para que o método não seja sobreposto
+        public sealed override void RetiradaSaldo(double quantia) // selado para que o método não seja sobreposto
         {
             //Saldo -= quantia;
             base.RetiradaSaldo(quantia);
