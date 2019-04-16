@@ -18,14 +18,14 @@ namespace Aula130_131_Exercicio
             List<Funcionario> Lista = new List<Funcionario>();
 
 
-            for (int i = 1; i > N; i++)
+            for (int i = 1; i <= N; i++)
             {
                 Funcionario func;
 
-                Console.Write("Funcionário contratado (S/N): ");
-                char contratado = char.Parse(Console.ReadLine().ToUpper());
-
                 Console.WriteLine($"Dados do {i}# trabalhador");
+                Console.Write("Funcionário contratado (S/N): ");
+                char contratado = char.Parse(Console.ReadLine());
+
                 Console.Write("Nome do trabalhador: ");
                 string nome = Console.ReadLine();
 
@@ -35,24 +35,21 @@ namespace Aula130_131_Exercicio
                 Console.Write("Valor por hora: ");
                 double valHora = double.Parse(Console.ReadLine());
 
-                if (contratado == 'S')
+                if (contratado == 'S' || contratado == 's')
                 {
                     Console.Write("Informe o valor do Bonus: ");
                     double adicional = double.Parse(Console.ReadLine());
-                    Lista.Add(func = new Contratado(nome, horas, valHora, adicional);
+                    Lista.Add(func = new Contratado(nome, horas, valHora, adicional));
                 } else
                 {
                     Lista.Add(func = new Funcionario(nome, horas, valHora));
                 }
-
-                foreach(Funcionario f in Lista)
-                {
-                    Console.WriteLine(f);
-                }
-
-
+                Console.WriteLine();
             }
-
+            foreach (Funcionario f in Lista)
+            {
+                Console.WriteLine(f);
+            }
 
             Console.WriteLine("Hello World!");
         }

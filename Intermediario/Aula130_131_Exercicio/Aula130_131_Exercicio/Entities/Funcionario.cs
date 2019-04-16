@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Aula130_131_Exercicio.Entities
 {
     class Funcionario
@@ -12,7 +9,6 @@ namespace Aula130_131_Exercicio.Entities
 
         public Funcionario()
         {
-
         }
 
         public Funcionario(string nome, int horasTrab, double valHora)
@@ -22,9 +18,9 @@ namespace Aula130_131_Exercicio.Entities
             ValHora = valHora;
         }
 
-        public virtual double Pagamento(int horas, double valHora)
+        public virtual double Pagamento()
         {
-            return horas * valHora;
+            return HorasTrab * ValHora;
         }
 
         public override string ToString()
@@ -32,7 +28,7 @@ namespace Aula130_131_Exercicio.Entities
             return Nome
                  + " - "
                  + ", Pagamento: $"
-                 + Pagamento(HorasTrab, ValHora);
+                 + Pagamento();
         }
     }
 }

@@ -11,12 +11,21 @@ namespace Aula130_131_Exercicio.Entities
         public Contratado(string nome, int horasTrab, double valHora, double adicional) : base(nome, horasTrab, valHora)
         
         {
-            Adicional *= 1.1;
+            Adicional = adicional;
         }
 
-        public override double Pagamento(int horas, double valHora)
+        public override double Pagamento()
         {
-            return (base.Pagamento(horas, valHora) + Adicional);
+            return (base.Pagamento() + (Adicional *= 1.1));
         }
+
+        public override string ToString()
+        {
+            return Nome
+                 + " - "
+                 + ", Pagamento: $"
+                 + Pagamento();
+        }
+
     }
 }
