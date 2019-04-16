@@ -24,7 +24,7 @@ namespace Aula130_131_Exercicio.Entities
             return Nome
                  + " - "
                  + ", Pagamento: $"
-                 + Pagamento();
+                 + Pagamento().ToString("F2");
         }
 
     }

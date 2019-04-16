@@ -50,8 +50,6 @@ namespace Aula130_131_Exercicio
             {
                 Console.WriteLine(f);
             }
-
-            Console.WriteLine("Hello World!");
         }
     }
 }
