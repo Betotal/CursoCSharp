@@ -1,5 +1,6 @@
-﻿using Aula142_Excecoes.Entities;
-using System;
+﻿using System;
+using Aula142_Excecoes.Entities;
+using Aula142_Excecoes.Entities.Exceptions;
 
 namespace Aula142_Excecoes
 {
@@ -7,28 +8,21 @@ namespace Aula142_Excecoes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("*****     USO DE EXCEÇÕES     *****");
-            Console.WriteLine();
-            Console.Write("Informe o número do Quarto: ");
-            int quarto = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-
-            Console.Write("Data de entrada (dd/mm/aaaa - Check-in): ");
-            DateTime checkin = DateTime.Parse(Console.ReadLine());
-
-            Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
-            DateTime checkout = DateTime.Parse(Console.ReadLine());
-
-            Reserva reserva = new Reserva();
-
-            string erro = reserva.VerificaErro(checkin, checkout);
-            if (erro != null)
+            try
             {
-                Console.WriteLine("Erro na reserva: " + erro);
-            }
-            else
-            { 
-                reserva.GravaReserva(quarto, checkin, checkout);
+                Console.WriteLine("*****     USO DE EXCEÇÕES     *****");
+                Console.WriteLine();
+                Console.Write("Informe o número do Quarto: ");
+                int quarto = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+                Console.Write("Data de entrada (dd/mm/aaaa - Check-in): ");
+                DateTime checkin = DateTime.Parse(Console.ReadLine());
+
+                Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
+                DateTime checkout = DateTime.Parse(Console.ReadLine());
+
+                Reserva reserva = new Reserva(quarto, checkin, checkout);
                 Console.WriteLine($"Reserva: " + reserva);
                 Console.WriteLine();
 
@@ -39,21 +33,21 @@ namespace Aula142_Excecoes
                 Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
                 checkout = DateTime.Parse(Console.ReadLine());
 
-                erro = reserva.VerificaErro(checkin, checkout);
-                if (erro != null)
-                {
-                    Console.WriteLine("Erro na Atualização: " + erro);
-                }
-                else
-                {
-                    Console.WriteLine("Dados atualizados");
-                    reserva.UpdateReserva(checkin, checkout);
-                    Console.WriteLine($"Reserva: " + reserva);
-                }
-
-                Console.WriteLine();
+                reserva.UpdateReserva(checkin, checkout);
+                Console.WriteLine($"Reserva: " + reserva);
             }
-            Console.WriteLine("Hello World!");
+            catch (DomainException e)
+            {
+                Console.WriteLine("Erro na reserva: " + e.Message);
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("Erro no tipo de dados: " + e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Erro inesperado: " + e.Message);
+            }
         }
     }
 }
