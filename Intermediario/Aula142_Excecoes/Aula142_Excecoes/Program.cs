@@ -19,54 +19,40 @@ namespace Aula142_Excecoes
             Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
             DateTime checkout = DateTime.Parse(Console.ReadLine());
 
-            DateTime now = DateTime.Now;
-            if (now > checkin || now > checkout)
-            { 
-                Console.WriteLine("Reserva só é permitida para datas futuras");
+            Reserva reserva = new Reserva();
+
+            string erro = reserva.VerificaErro(checkin, checkout);
+            if (erro != null)
+            {
+                Console.WriteLine("Erro na reserva: " + erro);
             }
-            else {
-                if (checkout <= checkin)
+            else
+            { 
+                reserva.GravaReserva(quarto, checkin, checkout);
+                Console.WriteLine($"Reserva: " + reserva);
+                Console.WriteLine();
+
+                Console.WriteLine("Atualização de reserva");
+                Console.Write("Data de entrada (dd/mm/aaaa - Check-in): ");
+                checkin = DateTime.Parse(Console.ReadLine());
+
+                Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
+                checkout = DateTime.Parse(Console.ReadLine());
+
+                erro = reserva.VerificaErro(checkin, checkout);
+                if (erro != null)
                 {
-                    Console.WriteLine("Data de Check-out deve ser maior que a data de entrada");
+                    Console.WriteLine("Erro na Atualização: " + erro);
                 }
                 else
                 {
-                    Reserva reserva = new Reserva(quarto, checkin, checkout);
+                    Console.WriteLine("Dados atualizados");
+                    reserva.UpdateReserva(checkin, checkout);
                     Console.WriteLine($"Reserva: " + reserva);
-                    Console.WriteLine();
-
-                    Console.WriteLine("Atualização de reserva");
-                    Console.Write("Data de entrada (dd/mm/aaaa - Check-in): ");
-                    checkin = DateTime.Parse(Console.ReadLine());
-
-                    Console.Write("Data de saida (dd/mm/aaaa - Check-out): ");
-                    checkout = DateTime.Parse(Console.ReadLine());
-
-                    now = DateTime.Now;
-                    if (now > checkin || now > checkout)
-                    {
-                        Console.WriteLine("Reserva só é permitida para datas futuras");
-                    }
-                    else
-                    {
-                        if (checkout <= checkin)
-                        {
-                            Console.WriteLine("Data de Check-out deve ser maior que a data de entrada");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Dados atualizados");
-                            reserva.UpdateReserva(checkin, checkout);
-                            Console.WriteLine($"Reserva: " + reserva);
-                        }
-                    }
                 }
 
                 Console.WriteLine();
             }
-
-
-
             Console.WriteLine("Hello World!");
         }
     }

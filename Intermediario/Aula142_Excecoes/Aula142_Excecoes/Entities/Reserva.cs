@@ -14,16 +14,34 @@ namespace Aula142_Excecoes.Entities
 
         public Reserva(int numQuarto, DateTime checkIn, DateTime checkOut)
         {
-            NumQuarto = numQuarto;
-            CheckIn = checkIn;
-            CheckOut = checkOut;
+            GravaReserva(numQuarto, checkIn, checkOut);
         }
 
         public int Duracao()
         {
             TimeSpan duracao = CheckOut.Subtract(CheckIn);
             return (int)duracao.TotalDays;
+        }
 
+        public string VerificaErro(DateTime checkin, DateTime checkout)
+        {
+            DateTime now = DateTime.Now;
+            if (now > checkin || now > checkout)
+            {
+                return "Reserva só é permitida para datas futuras";
+            }
+            if (checkout <= checkin)
+            {
+                return "Data de Check-out deve ser maior que a data de entrada";
+            }
+            return null;
+        }
+
+        public void GravaReserva(int numQuarto, DateTime checkIn, DateTime checkOut)
+        { 
+            NumQuarto = numQuarto;
+            CheckIn = checkIn;
+            CheckOut = checkOut;
         }
 
         public void UpdateReserva(DateTime checkin, DateTime checkout)
