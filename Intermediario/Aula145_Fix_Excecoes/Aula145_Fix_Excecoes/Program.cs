@@ -30,7 +30,6 @@ namespace Aula145_Fix_Excecoes
                     ContaBancaria Conta = new ContaBancaria(conta, nome, saldoinicial, limite);
 
                     Console.WriteLine();
-                    Console.WriteLine();
 
                     Console.Write("Digite a quantia de saque: ");
                     Conta.Saque(double.Parse(Console.ReadLine()));
