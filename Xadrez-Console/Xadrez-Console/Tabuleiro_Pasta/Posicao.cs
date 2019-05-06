@@ -1,5 +1,5 @@
 ﻿
-namespace Tabuleiro
+namespace Tabuleiro_Pasta
 {
     class Posicao
     {

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tabuleiro
+﻿
+namespace Tabuleiro_Pasta
 {
     enum Cor
     {
@@ -13,6 +10,6 @@ namespace Tabuleiro
         Ciano,
         Verde,
         Laranja,
-        Roxo;
-    }
+        Roxo
+    };
 }
