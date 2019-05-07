@@ -1,8 +1,6 @@
 ﻿
-namespace Tabuleiro_Pasta
-{
-    enum Cor
-    {
+namespace Tabuleiro_Pasta {
+    enum Cor {
         Branco,
         Preto,
         Vermelho,
