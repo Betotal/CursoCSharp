@@ -12,5 +12,9 @@ namespace Tabuleiro_Pasta {
             this.cor = cor;
             this.qtdMovto = 0;
         }
+
+        public void Movimento() {
+            qtdMovto++;
+        }
     }
 }
