@@ -9,6 +9,12 @@ namespace Tabuleiro_Pasta {
             this.coluna = coluna;
         }
 
+        // teste de movimento
+        public void definirValor(int linha, int coluna) {
+            this.linha = linha;
+            this.coluna = coluna;
+        }
+
         public override string ToString() {
             return linha
                  + ", "
