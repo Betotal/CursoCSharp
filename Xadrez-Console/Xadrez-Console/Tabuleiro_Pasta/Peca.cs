@@ -13,9 +13,14 @@ namespace Tabuleiro_Pasta {
             this.qtdMovto = 0;
         }
 
-        public void Movimento() {
+        public void addMovimento() {
             qtdMovto++;
         }
+
+        public void subtractMovimento() {
+            qtdMovto++;
+        }
+
 
         public bool existeMovimentosPossiveis() {
             bool[,] auxMatriz = movimentosPossiveis();
