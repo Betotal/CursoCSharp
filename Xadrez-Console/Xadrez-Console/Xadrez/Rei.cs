@@ -96,7 +96,7 @@ namespace Xadrez {
                     Posicao P2 = new Posicao(posicao.linha, posicao.coluna - 2);
                     Posicao P3 = new Posicao(posicao.linha, posicao.coluna - 3);
                     if (tab.peca(P1) == null && tab.peca(P2) == null && tab.peca(P3) == null) {
-                        auxMatriz[posicao.linha, posicao.coluna - 3] = true;
+                        auxMatriz[posicao.linha, posicao.coluna - 2] = true;
                     }
                 }
             }

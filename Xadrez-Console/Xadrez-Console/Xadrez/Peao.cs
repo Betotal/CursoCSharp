@@ -2,7 +2,10 @@
 
 namespace Xadrez {
     class Peao : Peca {
-        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor) {
+        private PartidaXadrez partida;
+
+        public Peao(Tabuleiro tab, Cor cor, PartidaXadrez partida) : base(tab, cor) {
+            this.partida = partida;
         }
         public override string ToString() {
             return "P";
@@ -44,6 +47,19 @@ namespace Xadrez {
                 if (tab.posicaoValida(pos) && existeAdversario(pos)) {
                     auxMatriz[pos.linha, pos.coluna] = true;
                 }
+
+                // jogada especial EnPassant
+                if (posicao.linha == 3) {
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tab.posicaoValida(esquerda) && existeAdversario(esquerda) && tab.peca(esquerda) == partida.enPassant) {
+                        auxMatriz[esquerda.linha - 1, esquerda.coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna + 1);
+                    if (tab.posicaoValida(direita) && existeAdversario(direita) && tab.peca(direita) == partida.enPassant) {
+                        auxMatriz[direita.linha - 1, direita.coluna] = true;
+                    }
+                }
             } else {
                 pos.definirValor(posicao.linha + 1, posicao.coluna);
                 if (tab.posicaoValida(pos) && livre(pos)) {
@@ -61,6 +77,19 @@ namespace Xadrez {
                 if (tab.posicaoValida(pos) && existeAdversario(pos)) {
                     auxMatriz[pos.linha, pos.coluna] = true;
                 }
+                // jogada especial EnPassant
+                if (posicao.linha == 4) {
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tab.posicaoValida(esquerda) && existeAdversario(esquerda) && tab.peca(esquerda) == partida.enPassant) {
+                        auxMatriz[esquerda.linha + 1, esquerda.coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tab.posicaoValida(direita) && existeAdversario(direita) && tab.peca(direita) == partida.enPassant) {
+                        auxMatriz[direita.linha + 1, direita.coluna] = true;
+                    }
+                }
+
             }
             return auxMatriz;
         }
