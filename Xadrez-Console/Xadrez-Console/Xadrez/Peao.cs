@@ -84,7 +84,7 @@ namespace Xadrez {
                         auxMatriz[esquerda.linha + 1, esquerda.coluna] = true;
                     }
 
-                    Posicao direita = new Posicao(posicao.linha, posicao.coluna - 1);
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna + 1);
                     if (tab.posicaoValida(direita) && existeAdversario(direita) && tab.peca(direita) == partida.enPassant) {
                         auxMatriz[direita.linha + 1, direita.coluna] = true;
                     }
