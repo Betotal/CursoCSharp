@@ -121,13 +121,7 @@ namespace Xadrez {
 
             // Jogada especial Promocao
             if (p is Peao) {
-                if ((p.cor == Cor.Branco && destino.linha == 0) || (p.cor == Cor.Preto && destino.linha == 7)) {
-                    p = tab.retirarPeca(destino);
-                    pecas.Remove(p);
-                    Peca dama = new Dama(tab, p.cor);
-                    tab.colocarPeca(dama, destino);
-                    pecas.Add(dama);
-                }
+                promocaoPeao(p, destino);
             }
 
             xeque = (estaEmXeque(adversario(jogadorAtual))) ? true : false;
@@ -139,6 +133,33 @@ namespace Xadrez {
             }
             // Jogada especial Enpassant
             enPassant = ((p is Peao && (destino.linha == origem.linha - 2 || destino.linha == origem.linha + 2))) ? p : null;
+        }
+
+        private void promocaoPeao(Peca p, Posicao destino) {
+            if ((p.cor == Cor.Branco && destino.linha == 0) || (p.cor == Cor.Preto && destino.linha == 7)) {
+                p = tab.retirarPeca(destino);
+                pecas.Remove(p);
+
+                System.Console.Write("Selecione a peça para promoção(D >> Dama/ B >> Bispo/ T >> Torre/ C >> Cavalo):");
+                char promo = char.Parse(System.Console.ReadLine().ToUpper());
+                Peca newP = null;
+                switch (promo) {
+                    case 'D':
+                        newP = new Dama(tab, p.cor);
+                        break;
+                    case 'B':
+                        newP = new Bispo(tab, p.cor);
+                        break;
+                    case 'T':
+                        newP = new Torre(tab, p.cor);
+                        break;
+                    case 'C':
+                        newP = new Cavalo(tab, p.cor);
+                        break;
+                }
+                tab.colocarPeca(newP, destino);
+                pecas.Add(newP);
+            }
         }
 
         public void validarPosicaoOrigem(Posicao pos) {

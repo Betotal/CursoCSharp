@@ -58,7 +58,7 @@ namespace Xadrez_Console {
 
         public static void ImprimirTabuleiro(Tabuleiro tab, bool[,] posicoesValidas) {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
-            ConsoleColor fundoPossivel = ConsoleColor.DarkGray;
+            ConsoleColor fundoPossivel = ConsoleColor.Cyan; //DarkGray
 
             for (int i = 0; i < tab.linhas; i++) {
                 Console.Write(8 - i + " >> ");
@@ -92,7 +92,7 @@ namespace Xadrez_Console {
                     Console.Write(peca);
                 } else {
                     ConsoleColor aux = Console.ForegroundColor;
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write(peca);
                     Console.ForegroundColor = aux;
                 }
