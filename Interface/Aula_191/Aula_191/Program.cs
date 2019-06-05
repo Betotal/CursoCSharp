@@ -9,7 +9,7 @@ namespace Aula_191 {
    
             Console.WriteLine("Entre com os dados do aluguel");
             Console.WriteLine();
-            Console.WriteLine("Modelo do carro: ");
+            Console.Write("Modelo do carro: ");
             String modelo = Console.ReadLine();
 
             Console.Write("Data e hora de Retirada do veiculo (DD/MM/YYYY HH:MM): ");
@@ -24,12 +24,12 @@ namespace Aula_191 {
 
             Aluguel carroAlugado = new Aluguel(inicio, final, new Veiculo(modelo));
 
-            ServicoAluguel Aluguel = new ServicoAluguel(precohora, precodia);
+            ServicoAluguel Aluguel = new ServicoAluguel(precohora, precodia, new TaxaBrasil());
 
             Aluguel.ProcessaNota(carroAlugado);
 
             Console.WriteLine();
-            Console.WriteLine("Nota do aluguel");
+            Console.WriteLine($"Nota do aluguel: Modelo - {modelo}");
             Console.WriteLine(carroAlugado.Nota);
 
             Console.ReadLine();
