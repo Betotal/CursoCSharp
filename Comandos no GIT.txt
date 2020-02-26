@@ -1,4 +1,4 @@
-Passos para instalação:
+gitPassos para instalação:
 1 - Download do Git Bash (git.scm.com)
 2 - Ao instalar, desmarcar:
     2.1 - Git GUI Here
@@ -27,7 +27,7 @@ Comandos para usar o Git Bash. Criar um controle de versão
     4.2 - git log  >> visualiza o log dos commmits realizados
     4.3 - git log --oneline  >> forma resumida
 
-5 - Prepara os arquivos pro commit >> git add.
+5 - Prepara os arquivos pro commit >> git add .
 6 - Commita efetivamente os arquivos >> git commit -m "<Mensagem da informação>" Obrigatório
     6.1 - Se esquecer a informação, será aberto o editor VIM do git bash. para sair >> <ESC> :q!
 
