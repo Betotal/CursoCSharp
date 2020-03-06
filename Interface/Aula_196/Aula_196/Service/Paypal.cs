@@ -1,11 +1,11 @@
 ﻿namespace Aula_196.Service
 {
-    class Paypal:PaypalOnline
+    class Paypal:PagtoOnline
     {
         private const double Juros = 0.01;
         private const double Taxa = 0.02;
 
-        public double ValPaypal(double quantia, int numParcela)
+        public double ValPagto(double quantia, int numParcela)
         {
             return quantia * Juros * numParcela;
         }

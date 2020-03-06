@@ -7,12 +7,12 @@ namespace Aula_196.Service
 {
     class ContratoParcela
     {
-        private PaypalOnline _paypalOnline;
+        private PagtoOnline _pagtoOnline;
 
 
-        public ContratoParcela(PaypalOnline onlinePaypal)
+        public ContratoParcela(PagtoOnline onlinePaypal)
         {
-            _paypalOnline = onlinePaypal;
+            _pagtoOnline = onlinePaypal;
         }
 
         public void ProcessaContrato(Contrato contrato, int parcelas)
@@ -21,8 +21,8 @@ namespace Aula_196.Service
             for (int i = 1; i <= parcelas; i++)
             {
                 DateTime date = contrato.dtContrato.AddMonths(i);
-                double AtualizaPrestacao = ValorPrestacao + _paypalOnline.ValPaypal(ValorPrestacao, i);
-                double TotalPrestacao = AtualizaPrestacao + _paypalOnline.PagtoJuros(AtualizaPrestacao);
+                double AtualizaPrestacao = ValorPrestacao + _pagtoOnline.ValPagto(ValorPrestacao, i);
+                double TotalPrestacao = AtualizaPrestacao + _pagtoOnline.PagtoJuros(AtualizaPrestacao);
                 contrato.AddParcela(new Parcela (date, TotalPrestacao));
             }
         }

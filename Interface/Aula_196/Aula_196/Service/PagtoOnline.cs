@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Aula_196.Service
 {
-    interface PaypalOnline
+    interface PagtoOnline
     {
-        double ValPaypal(double quantia, int numParcela);
+        double ValPagto(double quantia, int numParcela);
         double PagtoJuros(double quantia);
     }
 }
