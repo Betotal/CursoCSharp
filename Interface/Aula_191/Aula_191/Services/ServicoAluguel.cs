@@ -6,6 +6,15 @@ namespace Aula_191.Services {
         public double PrecoHora { get; private set; }
         public double PrecoDia { get; private set; }
 
+        // sem interface
+        private TaxaBrasil _TaxaBrasil = new TaxaBrasil();
+        public ServicoAluguel(double precoHora, double precoDia) {
+            PrecoHora = precoHora;
+            PrecoDia = precoDia;
+            //   _taxaServico = taxaservico;
+        }
+
+        // usando interface
         private ITaxaServico _taxaServico;
 
         public ServicoAluguel(double precoHora, double precoDia, ITaxaServico taxaservico) {
@@ -20,9 +29,14 @@ namespace Aula_191.Services {
             double pagtoBasico = 0.0;
             pagtoBasico = (duracao.TotalHours <= 12)? PrecoHora * Math.Ceiling(duracao.TotalHours): PrecoDia * Math.Ceiling(duracao.TotalDays);
 
-            double taxa = _taxaServico.Taxa(pagtoBasico);
+         // sem interface
+            double taxaBrasil = _TaxaBrasil.Taxa(pagtoBasico);
+            carroAlugado.Nota = new Nota(pagtoBasico, taxaBrasil);
 
-            carroAlugado.Nota = new Nota(pagtoBasico, taxa);
+         // com interface
+            double taxaInterf = _taxaServico.Taxa(pagtoBasico);
+            carroAlugado.Nota = new Nota(pagtoBasico, taxaInterf);
+
         }
     }
 }

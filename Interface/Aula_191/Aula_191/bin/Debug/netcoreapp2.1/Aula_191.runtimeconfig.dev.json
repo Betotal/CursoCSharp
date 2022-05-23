@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\betot\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\betot\\.nuget\\packages"
+    ]
+  }
+}

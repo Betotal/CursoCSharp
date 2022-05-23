@@ -3,7 +3,7 @@ using System.Globalization;
 using Aula_191.Entities;
 using Aula_191.Services;
 
-namespace Aula_191 {
+namespace Aula_191 {   //  Aula 203 - Aluguel de Carro
     class Program {
         static void Main(string[] args) {
    
@@ -24,7 +24,8 @@ namespace Aula_191 {
 
             Aluguel carroAlugado = new Aluguel(inicio, final, new Veiculo(modelo));
 
-            ServicoAluguel Aluguel = new ServicoAluguel(precohora, precodia, new TaxaBrasil());
+            //ServicoAluguel Aluguel = new ServicoAluguel(precohora, precodia); // sem interface
+            ServicoAluguel Aluguel = new ServicoAluguel(precohora, precodia, new TaxaBrasil()); // com interface
 
             Aluguel.ProcessaNota(carroAlugado);
 
