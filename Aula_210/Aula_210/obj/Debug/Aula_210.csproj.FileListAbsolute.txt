@@ -1,0 +1,2 @@
+D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_210\Aula_210\obj\Debug\Aula_210.csprojAssemblyReference.cache
+D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_210\Aula_210\obj\Debug\Aula_210.csproj.CoreCompileInputs.cache
