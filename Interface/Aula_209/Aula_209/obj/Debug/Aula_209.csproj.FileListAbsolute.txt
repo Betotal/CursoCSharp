@@ -1,7 +1,0 @@
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\obj\Debug\Aula_209.csprojAssemblyReference.cache
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\obj\Debug\Aula_209.csproj.CoreCompileInputs.cache
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\bin\Debug\Aula_209.exe.config
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\bin\Debug\Aula_209.exe
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\bin\Debug\Aula_209.pdb
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\obj\Debug\Aula_209.exe
-D:\Meus Documentos\Cursos\CursoCSharp\Interface\Aula_209\Aula_209\obj\Debug\Aula_209.pdb
