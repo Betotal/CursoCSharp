@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA854491-6396-41C4-9B1F-FDD75176B15A}</ProjectGuid>
+    <ProjectGuid>{574AC880-9E7C-4A81-A860-2C2A4B3F5FFF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Interface</RootNamespace>
-    <AssemblyName>Interface</AssemblyName>
+    <RootNamespace>Basicos</RootNamespace>
+    <AssemblyName>Basicos</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

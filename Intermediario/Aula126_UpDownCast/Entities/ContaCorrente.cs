@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Aula126_UpDownCast.Entities
 {
+<<<<<<< HEAD:Intermediario/Aula126_UpDownCast/Entities/ContaCorrente.cs
+    class ContaCorrente  //: ContaCorrente
+=======
     class ContaCorrente //: ContaCorrente
+>>>>>>> 3aad5c9468bf2c7b282b100811072f9d30221962:Intermediario/Aula126_UpDownCast/Aula126_UpDownCast/Entities/ContaCorrente.cs
     {
 
         public int NumConta { get; private set; }

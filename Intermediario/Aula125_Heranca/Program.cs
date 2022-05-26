@@ -11,7 +11,11 @@ namespace Aula125_Heranca
 
             Console.WriteLine(conta.Saldo);
 
+<<<<<<< HEAD:Intermediario/Aula125_Heranca/Program.cs
+ //           conta.Saldo = 500.00;   // por causa do acesso "protected" não é possivel atribuir valor, pelo programa.
+=======
 //            conta.Saldo = 500.00;   // por causa do acesso "protected" não é possivel atribuir valor, pelo programa.
+>>>>>>> 3aad5c9468bf2c7b282b100811072f9d30221962:Intermediario/Aula125_Heranca/Aula125_Heranca/Program.cs
         }
     }
 }
