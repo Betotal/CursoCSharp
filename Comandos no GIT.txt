@@ -27,8 +27,8 @@ Comandos para usar o Git Bash. Criar um controle de versão
     4.2 - git log  >> visualiza o log dos commmits realizados
     4.3 - git log --oneline  >> forma resumida
 
-5 - Prepara os arquivos pro commit >> git add .
-6 - Commita efetivamente os arquivos >> git commit -m "<Mensagem da informação>" Obrigatório
+5 - git add .  >>  Prepara os arquivos pro commit 
+6 - git commit -m "<Mensagem da informação - Obrigatorio>" >> Commita efetivamente os arquivos >> 
     6.1 - Se esquecer a informação, será aberto o editor VIM do git bash. para sair >> <ESC> :q!
 
 7 - Para recarrgar o ultimo commit:
@@ -40,10 +40,12 @@ Comandos para usar o Git Bash. Criar um controle de versão
     8.2 - git reset --hard HEAD~1  >> desfaz o commit e as modificações.
 
 9 - Visualizar alterações do commit anterior (pode ser feito pelo GITHub). O projeto não pode estar em alteração.
-    9.1 - git checkout <identificação do commit>
+gitgit     9.1 - git checkout <identificação do commit>
           9.1.1 - git checkout <nome do branch(nome do repositorio)>
 
 10 - Utilizar GitHub
+     10.1- Pegar o endereco da url: git config --get remote.origin.url
+
 11 - Associar o repositorio Git local ao GitHub.
      11.1 - Git remote add origin(alias do repositorio) <url do GITHub>
      11.2 - git remote set-url origin <url do GitHub> >>Altera o repositorio remoto
