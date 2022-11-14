@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD:Interface/Aula_196/Entities/Contrato.cs
-=======
-
->>>>>>> 3aad5c9468bf2c7b282b100811072f9d30221962:Interface/Aula_196/Aula_196/Entities/Contrato.cs
 namespace Aula_196.Entities
 {
     class Contrato

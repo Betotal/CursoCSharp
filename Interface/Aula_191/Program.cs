@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*    OPção sem interface
 ﻿using System;
 using System.Globalization;
 using Aula_191.Entities;
@@ -38,7 +38,7 @@ namespace Aula_191 {
         }
     }
 }
-=======
+*/
 ﻿using System;
 using System.Globalization;
 using Aula_191.Entities;
@@ -79,4 +79,3 @@ namespace Aula_191 {   //  Aula 203 - Aluguel de Carro
         }
     }
 }
->>>>>>> 3aad5c9468bf2c7b282b100811072f9d30221962

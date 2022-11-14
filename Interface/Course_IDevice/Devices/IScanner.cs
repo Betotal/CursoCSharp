@@ -1,5 +1,5 @@
 ﻿namespace Course.Devices {
-    interface IScanner {
-        string Scan();
+   interface IScanner {
+       string Scan();
     }
 }
